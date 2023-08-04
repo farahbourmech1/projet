@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ventes | Factures</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+/* Ajuster la taille des SVG */
+svg.icon-xxlg {
+  width: 25px;
+  height: 25px;
+}
+
+/* Modifier la couleur de remplissage du premier SVG */
+#icone1 path {
+  fill: #217414; /* Couleur rouge */
+}
+/* Modifier la couleur de remplissage du premier SVG */
+#icone1 circle {
+  fill: #217414; /* Couleur rouge */
+}
+
+/* Modifier la couleur de remplissage du deuxième SVG */
+#icone2  {
+  fill: #bbac05; /* Couleur verte */
+}
+
+/* Modifier la couleur de remplissage du troisième SVG */
+#icone3  {
+  fill: #3a0464; /* Couleur bleue */
+}
+
+/* Déplacer le deuxième SVG vers le bas de 10 pixels */
+svg.icon-xxlg:nth-of-type(2) {
+  margin-top: 10px;
+}
+
+/* Déplacer le troisième SVG vers le haut de 20 pixels */
+svg.icon-xxlg:nth-of-type(3) {
+  margin-top: -20px;
+}
+
+    </style>
+    
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                </div>
+                <div class="sidebar-brand-text mx-3">ARMA</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span></a>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa fa-edit"></i>
+                    <span>Inventaire</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="article.html">Articles</a>
+                        <a class="collapse-item" href="groupe-article.html">Groupes d'articles</a>
+                        <a class="collapse-item" href="ajustement.html">Ajustements de stock</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Ventes</span>
+                </a>
+                <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="Vente-clients.html">Clients</a>
+                        <a class="collapse-item" href="vente-devis.html">Devis</a>
+                        <a class="collapse-item" href="vente-commande.html">Commandes client</a>
+                        <a class="collapse-item active" href="vente-facture.html">Factures</a>
+                        <a class="collapse-item" href="vente-paiement-recu.html">Paiements reçus</a>
+                        <a class="collapse-item" href="vente-retour-vente.html">Retours vente</a>
+                        <a class="collapse-item" href="vente-facture-avoir.html">Factures d'avoir</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Achats</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="achat-fournisseur.html">Fournisseurs</a>
+                        <a class="collapse-item" href="achat-depense.html">Dépenses</a>
+                        <a class="collapse-item" href="achat-bon-cmd.html">Bons de commandes</a>
+                        
+                        <a class="collapse-item" href="achat-fact-fourniss.html">Factures fournisseurs</a>
+                        <a class="collapse-item" href="achat-paiement-effectue.html">Paiements effectués</a>
+                        <a class="collapse-item" href="achat-avoir-fourniss.html">Avoirs fournisseurs</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="rapport.html">
+                 <i class="fas fa-book"></i>
+                    <span>Rapports</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+    
+
+                        <div class="topbar-divider d-none d-sm-block"></div> 
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Utilisateurs</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Paramètres
+                                </a>
+                                
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Déconnexion
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Toutes les factures<a id="boutton-nv" href="ajouter-facture.html" class="btn btn-primary">+ Nouveau</a>
+                    </h1>
+                  
+                  
+                  <br>
+                  <br><hr><br>
+
+                    <!-- DataTales Example -->
+                    <div class="fill body list-body d-flex scroll-y">
+                        <div class="scroll-y w-100 scrollbox ">
+                            <div id="ember866" class="ember-view"></div>
+                            <div class="intro text-center">
+                                <div class="videoimg"></div>
+                                <h3>C’est l’heure d’être payé&nbsp;!</h3>
+                                <p class="text-muted">Nous ne voulons pas trop nous vanter, mais envoyer de superbes factures et être payé n’a jamais été aussi simple. N’hésitez pas&nbsp;! Essayez par vous-même.</p>
+                            </div> 
+                            <br><br><hr><br>
+                            <div id="ember868" class="intro-lifecycle text-center ember-view">
+                                <h4 class="text-regular">Cycle de vie d’un Facture</h4>
+                                <img alt="Cycle de vie d’un Facture" src="https://d31g2a6snus4ly.cloudfront.net/zbooks/assets/images/1x/zi-empty-workflow-dcd62da9d7.png" srcset="https://d31g2a6snus4ly.cloudfront.net/zbooks/assets/images/1x/zi-empty-workflow-dcd62da9d7.png 1x, https://d31g2a6snus4ly.cloudfront.net/zbooks/assets/images/2x/zi-empty-workflow-8a5298c361.png 2x">
+                                <br><br><hr><br><br>
+                                <div class="row features-section">
+                                    <div class="col-lg-4 text-center" id="icone1">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 512 512" xml:space="preserve" class="icon icon-xxlg" color="#4bd985">
+                                            <path d="M461.1 355.2c-23.3-21.7-60.1-21.5-82 .4-1.6 1.6-3.3 1.8-3.9 1.7-1.2 0-1.7-.6-1.9-.8l-.8-.9c-1.6-1.6-1.7-3.3-1.7-3.9 0-1.2.6-1.7.8-1.9l.5-.4 89.6-89.6c24.9-24.9 38.6-57.9 38.6-93.1s-13.7-68.2-38.6-93.1C413.1 25.1 348.4-1.6 279.3-1.6c-69 0-133.8 26.7-182.2 75.2-24.8 24.8-44 53.9-57 86.4-12.6 31.4-18.9 64.6-18.6 98.6.4 68.7 27.4 132.4 75.8 179.6 49.7 48.4 115 75.1 183.9 75.1 69.1 0 133.2-26.8 180.6-75.3l.3-.3c21.6-23.3 21.6-58.3 0-81.6l-1-.9zm-22.5 60.5c-41.2 42.3-97.2 65.5-157.5 65.5-60.6 0-117.9-23.4-161.6-66-42.3-41.2-65.7-96.9-66.1-156.9-.2-29.8 5.3-58.9 16.3-86.5 11.4-28.5 28.2-54 49.9-75.7 42.4-42.4 99.1-65.8 159.6-65.8s117.2 23.4 159.6 65.8c18.8 18.8 29.2 43.9 29.2 70.5s-10.4 51.7-29.2 70.5L350 325.9c-7 6.3-11.1 14.9-11.4 24.5-.4 10 3.5 20 10.6 27.4 6.3 7.1 15 11.1 24.5 11.5 10.2.4 20.4-3.6 27.8-11.1 9.6-9.6 26.5-9.5 37.2 0 10 11 9.9 26.6-.1 37.5z">
+                                            </path>
+                                            <circle cx="385.5" cy="155.7" r="32.7">
+                                            </circle>
+                                            <circle cx="272" cy="103.2" r="32.7"></circle>
+                                            <circle cx="167" cy="172.8" r="32.7"></circle>
+                                            <circle cx="144.3" cy="299.8" r="32.7"></circle>
+                                        </svg> 
+                                        <h4 class="font-large">
+                                            Apposez votre marque sur votre facture
+                                        </h4> 
+                                        <div class="px-4 text-muted">Choisissez votre thème favori dans notre galerie de modèles et personnalisez votre facture à l’image de votre marque.<br>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 text-center" id="icone2">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 512 512" xml:space="preserve" class="icon icon-xxlg" color="#e3b469">
+                                            <path fill="none" d="M33 206.7v179.8c0 .3.3.6.6.6h444.8c.3 0 .6-.3.6-.6V206.7H33zm146.8 78.8h-108c-8.8 0-16-7.2-16-16s7.2-16 16-16h108c8.8 0 16 7.2 16 16s-7.2 16-16 16zM479 174.7v-49.2c0-.3-.3-.6-.6-.6H33.6c-.3 0-.6.3-.6.6v49.2h446z"></path>
+                                            <path d="M478.4 92.9H33.6c-18 0-32.6 14.6-32.6 32.6v261c0 18 14.6 32.6 32.6 32.6h444.8c18 0 32.6-14.6 32.6-32.6v-261c0-18-14.6-32.6-32.6-32.6zM35 124.9h442c1.1 0 2 .9 2 2v45.8c0 1.1-.9 2-2 2H35c-1.1 0-2-.9-2-2v-45.8c0-1.1.9-2 2-2zm442 262.2H35c-1.1 0-2-.9-2-2V208.7c0-1.1.9-2 2-2h442c1.1 0 2 .9 2 2v176.4c0 1.1-.9 2-2 2z"></path>
+                                            <path d="M179.8 253.5h-108c-8.8 0-16 7.2-16 16s7.2 16 16 16h108c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path>
+                                        </svg>
+                                        <h4 class="font-large">
+                                            Collecter les paiements en ligne
+                                        </h4>
+                                        <div class="px-4 text-muted">
+                                            Configurez une passerelle de paiement et collectez facilement les paiements en ligne auprès de vos clients.<br> 
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 text-center" id="icone3">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 512 512" xml:space="preserve" class="icon icon-xxlg" color="#7370eb">
+                                            <circle fill="none" cx="256" cy="259.3" r="21.3"></circle>
+                                            <path fill="none" d="M310.2 342.3c-14.1 10.3-32.3 15.5-54.2 15.5-21.9 0-40-5.2-54.1-15.5-16.1 14-24.2 30.4-24.8 49.8h158.8c-.7-18.8-9.3-35.5-25.7-49.8z"></path>
+                                            <path fill="none" d="M461.3 119.9H50.7c-.2 0-.3.1-.3.3v271.7c0 .2.1.3.3.3h94.4c.7-33.4 17.4-62.3 48.5-83.8 6.6-4.6 15.7-3.5 21 2.5 8.8 9.9 22.8 14.9 41.4 14.9s32.6-5 41.4-14.9c5.4-6 14.4-7.1 21-2.5 31.6 21.8 48.7 50.8 49.4 83.8h93.5c.2 0 .3-.1.3-.3V120.1c0-.1-.1-.2-.3-.2zM86.4 171.1c-8.7 0-15.1-7.1-15.5-15.5-.4-8.4 7.4-15.5 15.5-15.5 8.7 0 15.1 7.1 15.5 15.5.3 8.4-7.4 15.5-15.5 15.5zm45.1 0c-8.7 0-15.1-7.1-15.5-15.5-.4-8.4 7.4-15.5 15.5-15.5 8.7 0 15.1 7.1 15.5 15.5.4 8.4-7.4 15.5-15.5 15.5zM256 312.7c-29.4 0-53.3-23.9-53.3-53.3S226.6 206 256 206s53.3 23.9 53.3 53.3-23.9 53.4-53.3 53.4z"></path>
+                                            <path d="M461.3 87.9H50.7c-17.8 0-32.3 14.5-32.3 32.3v271.7c0 17.8 14.5 32.3 32.3 32.3h410.5c17.8 0 32.3-14.5 32.3-32.3V120.1c.1-17.8-14.4-32.2-32.2-32.2zM177.1 392.1c.6-19.4 8.7-35.8 24.8-49.8 14.1 10.3 32.2 15.5 54.1 15.5s40-5.2 54.2-15.5c16.5 14.2 25.1 31 25.7 49.8H177.1zm284.5-2c0 1.1-.9 2-2 2h-91.8c-.7-33-17.7-61.9-49.4-83.8-6.6-4.6-15.7-3.5-21 2.5-8.8 9.9-22.8 14.9-41.4 14.9s-32.6-5-41.4-14.9c-5.4-6-14.4-7.1-21-2.5-31.1 21.4-47.8 50.4-48.5 83.8H52.4c-1.1 0-2-.9-2-2V121.9c0-1.1.9-2 2-2h407.2c1.1 0 2 .9 2 2v268.2z"></path>
+                                            <path d="M256 206c-29.4 0-53.3 23.9-53.3 53.3s23.9 53.3 53.3 53.3 53.3-23.9 53.3-53.3S285.4 206 256 206zm0 74.7c-11.8 0-21.3-9.6-21.3-21.3S244.2 238 256 238s21.3 9.6 21.3 21.3-9.5 21.4-21.3 21.4zM86.4 140.1c-8.1 0-15.9 7.1-15.5 15.5.4 8.4 6.8 15.5 15.5 15.5 8.1 0 15.9-7.1 15.5-15.5-.4-8.4-6.8-15.5-15.5-15.5zM131.5 140.1c-8.1 0-15.9 7.1-15.5 15.5.4 8.4 6.8 15.5 15.5 15.5 8.1 0 15.9-7.1 15.5-15.5-.3-8.4-6.8-15.5-15.5-15.5z"></path>
+                                        </svg>
+                                        <h4 class="font-large">Portail client</h4>
+                                        <div class="px-4 text-muted">Activez le portail client pour vos clients et permettez-leur d’accepter des devis, de suivre les factures et d’effectuer les paiements.<br> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                <!-- /.container-fluid -->
+
+            </div>
+            
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">prêt à partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à mettre fin à votre session en cours.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" href="login.html">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

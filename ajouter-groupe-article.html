@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>groupe-article</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        #unitéListe {
+  max-height: 200px; /* Adjust this value as needed */
+  overflow-y: auto; /* Enable vertical scrolling when the list exceeds the max height */
+}
+
+/* Hide the list by default */
+#unitéListe {
+  display: none;
+}
+
+/* Show the list when the 'show' class is added */
+#unitéListe.show {
+  display: block;
+}
+
+/* Position the list on top of the 'Livrer à' box */
+#unitéListe {
+  position: absolute;
+  top: 30px; /* Adjust this value to position the list as needed */
+  left: 100;
+  z-index: 1;
+  width: 250px;
+}
+/******************************************************/
+#fabricantListe {
+  max-height: 200px; /* Adjust this value as needed */
+  overflow-y: auto; /* Enable vertical scrolling when the list exceeds the max height */
+}
+
+/* Hide the list by default */
+#fabricantListe {
+  display: none;
+}
+
+/* Show the list when the 'show' class is added */
+#fabricantListe.show {
+  display: block;
+}
+
+/* Position the list on top of the 'Livrer à' box */
+#fabricantListe {
+  position: absolute;
+  top: 30px; /* Adjust this value to position the list as needed */
+  left: 100;
+  z-index: 1;
+  width: 250px;
+}
+/*********************************************************************************************/
+#marqueListe {
+  max-height: 200px; /* Adjust this value as needed */
+  overflow-y: auto; /* Enable vertical scrolling when the list exceeds the max height */
+}
+
+/* Hide the list by default */
+#marqueListe {
+  display: none;
+}
+
+/* Show the list when the 'show' class is added */
+#marqueListe.show {
+  display: block;
+}
+
+/* Position the list on top of the 'Livrer à' box */
+#marqueListe {
+  position: absolute;
+  top: 30px; /* Adjust this value to position the list as needed */
+  left: 100;
+  z-index: 1;
+  width: 250px;
+}
+/*********************************************************************************************/
+#taxeListe {
+  max-height: 200px; /* Adjust this value as needed */
+  overflow-y: auto; /* Enable vertical scrolling when the list exceeds the max height */
+}
+
+/* Hide the list by default */
+#taxeListe {
+  display: none;
+}
+
+/* Show the list when the 'show' class is added */
+#taxeListe.show {
+  display: block;
+}
+
+/* Position the list on top of the 'Livrer à' box */
+#taxeListe {
+  position: absolute;
+  top: 30px; /* Adjust this value to position the list as needed */
+  left: 100;
+  z-index: 1;
+  width: 250px;
+}
+/********************************************************************************************/
+
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                </div>
+                <div class="sidebar-brand-text mx-3">ARMA</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span></a>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa fa-edit"></i>
+                    <span>Inventaire</span>
+                </a>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="article.html">Articles</a>
+                        <a class="collapse-item active" href="groupe-article.html">Groupes d'articles</a>
+                        <a class="collapse-item" href="ajustement.html">Ajustements de stock</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Ventes</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="Vente-clients.html">Clients</a>
+                        <a class="collapse-item" href="vente-devis.html">Devis</a>
+                        <a class="collapse-item" href="vente-commande.html">Commandes client</a>
+                        <a class="collapse-item" href="vente-facture.html">Factures</a>
+                 
+                        <a class="collapse-item" href="vente-paiement-recu.html">Paiements reçus</a>
+                        <a class="collapse-item" href="vente-retour-vente.html">Retours vente</a>
+                        <a class="collapse-item" href="vente-facture-avoir.html">Factures d'avoir</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Achats</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="achat-fournisseur.html">Fournisseurs</a>
+                        <a class="collapse-item" href="achat-depense.html">Dépenses</a>
+                        <a class="collapse-item" href="achat-bon-cmd.html">Bons de commandes</a>
+                        
+                        <a class="collapse-item" href="achat-fact-fourniss.html">Factures fournisseurs</a>
+                        <a class="collapse-item" href="achat-paiement-effectue.html">Paiements effectués</a>
+                        <a class="collapse-item" href="achat-avoir-fourniss.html">Avoirs fournisseurs</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="rapport.html">
+                 <i class="fas fa-book"></i>
+                    <span>Rapports</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div> 
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Utilisateurs</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Paramètres
+                                </a>
+                                
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Déconnexion
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                
+                <div class="container-fluid">
+                    <h1 class="h3 mb-2 text-gray-800">Nouveau groupe d’articles
+                    </h1>
+                    <br>
+   <hr>
+   <br>
+   
+   <!--******************************************************************************************************-->
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-6">
+               <fieldset class="form-group">
+                   <div class="row">
+                      <legend class="col-form-label  col-lg-3 pt-0">
+                        <span class="text-dashed-underline" id="ac2af5ec8">Type
+                        </span>
+                       
+                      </legend> 
+                    <div class="col-lg-9">
+                        <div class="form-check form-check-inline">
+                           <input name="contact-sub-type" id="af50b8c20" class="ember-view form-check-input" type="radio" value="business"> <!--où je selectionne-->
+                           <label class="form-check-label" >Marchandises
+                           </label>
+                        </div>
+                          <div class="form-check form-check-inline">
+                           <input name="contact-sub-type" id="a2eaf0155" class="ember-view form-check-input" type="radio" value="individual"> <!--où je selectionne-->
+                           <label class="form-check-label" >Service
+                           </label>
+                          </div>
+                    </div>
+                   </div>
+                  </fieldset>
+<!--*******************************************************************************************-->
+                  <div class="form-group">
+                    <div class="row">
+                     <label class="col-form-label col-lg-3 ">Nom du groupe d’articles
+                    </label>
+                      <div class="col-lg-6">
+                       <input id="ember432" class="ember-text-field ember-view form-control" type="text">
+                      </div> 
+                    <!---->
+                     </div>
+                    </div>
+<!--******************************************************************************************-->
+        <fieldset class="form-group">
+            <div class="row ">
+                <legend class="col-lg-3 col-form-label ">Description
+                </legend>
+            <div class="col-lg-6 ">
+
+                    <textarea  id="ember652" class="form-control ember-text-area ember-view"></textarea>
+
+            </div>
+            </div>
+        </fieldset>
+     
+<!--******************************************************************************************-->
+        <div class="row form-group">
+            <div class="offset-lg-3 col-lg-8">
+                <div class="form-check form-check-inline">
+                    <input id="ad820d82f" class="ember-checkbox ember-view form-check-input" type="checkbox"> 
+                    <label class="form-check-label" for="ad820d82f">Article pouvant faire l’objet d’un retour</label>
+                </div>
+            </div>
+        </div>
+<!--******************************************************************************************-->
+                
+         </div>
+         <div class="col-lg-3">
+             <div class="col-lg-20">
+                 <div id="ember2301" class="ember-view">
+                     <div class="image-upload item-details-image ">
+                         <div id="ember2302" class="ember-view">
+                              <div>
+                                 <div class="hv-centered"><div>
+                                 </div> 
+                                 <div class="font-small">
+                                     <label class="text-muted drag-text">Faire glisser l’image ou les images ici ou</label> 
+                                     
+                                     <span class="text-blue cursor-pointer small">Parcourir les images</span>
+                                 </div>
+                             </div> 
+                             <span id="upload">
+                                 <input accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg" id="ember2303" class="upload ember-view form-control" type="file">
+                             </span>
+                         </div>
+                         <hr>
+                          <div class="filesize-info">
+                             <span class="font-xs text-muted">&nbsp;Vous pouvez ajouter jusqu’à 15&nbsp;images, chacune ne dépassant pas 5&nbsp;Mo.</span>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="image-list-container image-list-creation-container">
+                 </div>
+             </div>
+         </div>
+         </div>
+     </div>
+ </div>
+ <br>
+ <hr>
+ <!--******************************************************************************************************-->
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+    
+            <div class="form-group" style="position: relative;">
+                <div class="row">
+                  <label class="col-form-label col-lg-3">
+                    <span class="pr-1">Unité</span>
+                  </label>
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="unitéInput" placeholder="Sélectionner l'unité ...">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="searchButton">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="list-group suggestions mt-2" id="unitéListe">
+                      <li class="list-group-item">box</li>
+                      <li class="list-group-item">cm</li>
+                      <li class="list-group-item">dz</li>
+                      <li class="list-group-item">ft</li>
+                      <li class="list-group-item">g</li>
+                      <li class="list-group-item">in</li>
+                      <li class="list-group-item">kg</li>
+                      <li class="list-group-item">km</li>
+                      <li class="list-group-item">lb</li>
+                      <li class="list-group-item">mg</li>
+                      <li class="list-group-item">ml</li>
+                      <li class="list-group-item">m</li>
+                      <li class="list-group-item">pcs</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" style="position: relative;">
+                <div class="row">
+                  <label class="col-form-label col-lg-3">
+                    <span class="pr-1">Fabricant</span>
+                  </label>
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="fabricantInput" placeholder="Sélectionner un fabricant ..." >
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="searchButton1">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="list-group suggestions mt-2" id="fabricantListe">
+                      <li class="list-group-item">aaaa</li>
+                      <li class="list-group-item">bbbb</li>
+                      <li class="list-group-item">cccc</li>
+                    
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            
+      
+
+        <div class="form-group" style="position: relative;">
+            <div class="row">
+              <label class="col-form-label col-lg-3">
+                <span class="pr-1">Taxe</span>
+              </label>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="taxeInput" placeholder="Sélectionner une Taxe ..." >
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="searchButton3">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <ul class="list-group suggestions mt-2" id="taxeListe">
+                  <li class="list-group-item">aaaa</li>
+                  <li class="list-group-item">bbbb</li>
+                  <li class="list-group-item">cccc</li>
+                
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" style="position: relative;">
+            <div class="row">
+              <label class="col-form-label col-lg-3">
+                <span class="pr-1">Marque</span>
+              </label>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="marqueInput" placeholder="Sélectionner une marque ..." >
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="searchButton2">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <ul class="list-group suggestions mt-2" id="marqueListe">
+                  <li class="list-group-item">aaaa</li>
+                  <li class="list-group-item">bbbb</li>
+                  <li class="list-group-item">cccc</li>
+                
+                </ul>
+              </div>
+            </div>
+          </div>
+                
+            </div>
+            </div>
+         <br>
+    </div>  
+</div>
+ <hr><br><br>
+<!--*******************************************************************************************--><div class="col-lg-8 form-group pt-5">
+  <div class="row">
+    <label class="col-lg-2 required">Plusieurs articles&nbsp;?</label> 
+    <div class="col-lg-10">
+      <div class="row">
+        <div class="col-lg-4">
+          <label class="required">Attribut</label>
+        </div>
+        <div class="col-lg-7">
+          <label class="required">Options</label>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+          <div id="ember408" class="type-ahead ember-view">
+            <div id="ember409" class="dropdown show ac-dropdown ember-view">
+              <div class="auto-select ac-selected" tabindex="-1">
+                <input autocomplete="off" spellcheck="false" placeholder="ex&nbsp;: couleur"  autocorrect="off" autocapitalize="off" id="ember410" class="ember-text-field form-control ac-search-txt ember-view" type="text"> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div id="ember408" class="type-ahead ember-view">
+            <div id="ember409" class="dropdown show ac-dropdown ember-view">
+              <div class="auto-select ac-selected" tabindex="-1">
+                <input autocomplete="off" spellcheck="false"autocorrect="off" autocapitalize="off" id="ember410" class="ember-text-field form-control ac-search-txt ember-view" type="text"> 
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row form-group">
+      </div>
+      <div>
+        <a href="#" data-ember-action="" data-ember-action-414="414">
+          <span class="text-default">Ajouter plus d’attributs</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<hr>
+<!--*****************************************************************************************-->
+<div class="container-fluid">
+         <fieldset class="form-group">
+            <div class="row">
+               <legend class="col-form-label  col-lg-3 pt-0">
+                 <span class="text-dashed-underline" id="ac2af5ec8">Sélectionnez votre type d’article :
+
+                 </span>
+                
+               </legend> 
+             <div class="col-lg-9">
+                 <div class="form-check form-check-inline">
+                    <input name="contact-sub-type" id="af50b8c20" class="ember-view form-check-input" type="radio" value="business"> <!--où je selectionne-->
+                    <label class="form-check-label" >Inventaire
+                    </label>
+                 </div>
+                   <div class="form-check form-check-inline">
+                    <input name="contact-sub-type" id="a2eaf0155" class="ember-view form-check-input" type="radio" value="individual"> <!--où je selectionne-->
+                    <label class="form-check-label" >Non-inventaire
+                    </label>
+                   </div>
+             </div>
+            </div>
+         </fieldset>
+</div>
+<!--******************************************************************************************-->
+ <br><br><br>
+ <div class="btn-toolbar fixed-actions fill-container btn">
+     <button id="ember377" class="btn btn-primary ember-view" type="submit"><!----> 
+        Enregistrer
+     </button>
+     
+     <button id="ember378" class="btn btn-secondary ember-view" type="button"><!----> 
+               Annuler
+     </button>
+ </div>
+ <br>
+ <br>
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+ 
+ 
+               
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <!--<footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer> -->
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <!--<a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a> -->
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">prêt à partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à mettre fin à votre session en cours.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" href="login.html">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+<script>
+    $(document).ready(function() {
+    // Récupérer les éléments nécessaires
+    const $unitéInput = $('#unitéInput');
+    const $unitéListe = $('#unitéListe');
+    const $searchButton = $('#searchButton');
+
+    // Afficher les suggestions lorsque l'utilisateur saisit une lettre
+    $unitéInput.on('input', function() {
+      const searchTerm = $unitéInput.val().toLowerCase();
+      $unitéListe.find('li').each(function() {
+        const $li = $(this);
+        const nom = $li.text().toLowerCase();
+        if (nom.startsWith(searchTerm)) {
+          $li.show();
+        } else {
+          $li.hide();
+        }
+      });
+
+      // Afficher ou masquer la liste de suggestions
+      if (searchTerm.length > 0) {
+        $unitéListe.addClass('show');
+      } else {
+        $unitéListe.removeClass('show');
+      }
+    });
+
+    // Remplir le champ avec le nom sélectionné lorsqu'on clique sur une suggestion
+    $unitéListe.on('click', 'li', function() {
+      $unitéInput.val($(this).text());
+      $unitéListe.removeClass('show');
+    });
+
+    // Afficher ou masquer la liste de suggestions lorsque le bouton de recherche est cliqué
+    $searchButton.on('click', function() {
+      $unitéListe.toggleClass('show');
+    });
+  });
+  /************************************************************************************/
+  $(document).ready(function() {
+    // Récupérer les éléments nécessaires
+    const $fabricantInput = $('#fabricantInput');
+    const $fabricantListe = $('#fabricantListe');
+    const $searchButton1 = $('#searchButton1');
+
+    // Afficher les suggestions lorsque l'utilisateur saisit une lettre
+    $fabricantInput.on('input', function() {
+      const searchTerm = $fabricantInput.val().toLowerCase();
+      $fabricantListe.find('li').each(function() {
+        const $li = $(this);
+        const nom = $li.text().toLowerCase();
+        if (nom.startsWith(searchTerm)) {
+          $li.show();
+        } else {
+          $li.hide();
+        }
+      });
+
+      // Afficher ou masquer la liste de suggestions
+      if (searchTerm.length > 0) {
+        $fabricantListe.addClass('show');
+      } else {
+        $fabricantListe.removeClass('show');
+      }
+    });
+
+    // Remplir le champ avec le nom sélectionné lorsqu'on clique sur une suggestion
+    $fabricantListe.on('click', 'li', function() {
+      $fabricantInput.val($(this).text());
+      $fabricantListe.removeClass('show');
+    });
+
+    // Afficher ou masquer la liste de suggestions lorsque le bouton de recherche est cliqué
+    $searchButton1.on('click', function() {
+      $fabricantListe.toggleClass('show');
+    });
+  });
+  /*******************************************************************************************/
+  $(document).ready(function() {
+    // Récupérer les éléments nécessaires
+    const $marqueInput = $('#marqueInput');
+    const $marqueListe = $('#marqueListe');
+    const $searchButton2 = $('#searchButton2');
+
+    // Afficher les suggestions lorsque l'utilisateur saisit une lettre
+    $marqueInput.on('input', function() {
+      const searchTerm = $marqueInput.val().toLowerCase();
+      $marqueListe.find('li').each(function() {
+        const $li = $(this);
+        const nom = $li.text().toLowerCase();
+        if (nom.startsWith(searchTerm)) {
+          $li.show();
+        } else {
+          $li.hide();
+        }
+      });
+
+      // Afficher ou masquer la liste de suggestions
+      if (searchTerm.length > 0) {
+        $marqueListe.addClass('show');
+      } else {
+        $marqueListe.removeClass('show');
+      }
+    });
+
+    // Remplir le champ avec le nom sélectionné lorsqu'on clique sur une suggestion
+    $marqueListe.on('click', 'li', function() {
+      $marqueInput.val($(this).text());
+      $marqueListe.removeClass('show');
+    });
+
+    // Afficher ou masquer la liste de suggestions lorsque le bouton de recherche est cliqué
+    $searchButton2.on('click', function() {
+      $marqueListe.toggleClass('show');
+    });
+  });
+    /*******************************************************************************************/
+    $(document).ready(function() {
+    // Récupérer les éléments nécessaires
+    const $taxeInput = $('#taxeInput');
+    const $taxeListe = $('#taxeListe');
+    const $searchButton3 = $('#searchButton3');
+
+    // Afficher les suggestions lorsque l'utilisateur saisit une lettre
+    $taxeInput.on('input', function() {
+      const searchTerm = $taxeInput.val().toLowerCase();
+      $taxeListe.find('li').each(function() {
+        const $li = $(this);
+        const nom = $li.text().toLowerCase();
+        if (nom.startsWith(searchTerm)) {
+          $li.show();
+        } else {
+          $li.hide();
+        }
+      });
+
+      // Afficher ou masquer la liste de suggestions
+      if (searchTerm.length > 0) {
+        $taxeListe.addClass('show');
+      } else {
+        $taxeListe.removeClass('show');
+      }
+    });
+
+    // Remplir le champ avec le nom sélectionné lorsqu'on clique sur une suggestion
+    $taxeListe.on('click', 'li', function() {
+      $taxeInput.val($(this).text());
+      $taxeListe.removeClass('show');
+    });
+
+    // Afficher ou masquer la liste de suggestions lorsque le bouton de recherche est cliqué
+    $searchButton3.on('click', function() {
+      $taxeListe.toggleClass('show');
+    });
+  });
+</script>
+</body>
+
+</html>

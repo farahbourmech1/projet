@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Achats | Avoirs fournisseurs</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+     /* Set a fixed maximum height for the list */
+#nomsListe {
+  max-height: 200px; /* Adjust this value as needed */
+  overflow-y: auto; /* Enable vertical scrolling when the list exceeds the max height */
+}
+
+/* Hide the list by default */
+#nomsListe {
+  display: none;
+}
+
+/* Show the list when the 'show' class is added */
+#nomsListe.show {
+  display: block;
+}
+
+/* Position the list on top of the 'Livrer à' box */
+#nomsListe {
+  position: absolute;
+  top: 30px; /* Adjust this value to position the list as needed */
+  left: 100;
+  z-index: 1;
+  width: 250px;
+}
+/************************************************************************************************/
+/* Global styling */
+body {
+ font-family: Arial, sans-serif;
+}
+
+/* Container styling */
+.fill-container {
+ padding: 20px;
+}
+
+/* Textarea styling */
+.form-group textarea {
+ width: 100%;
+ resize: vertical;
+}
+
+/* File upload container */
+.file-upload-container {
+ margin-top: 10px;
+}
+
+.btn-upload-container {
+ position: relative;
+}
+
+/* File input and upload button */
+.upload {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ opacity: 0;
+}
+
+.upload-btn-sm {
+ padding: 5px 10px;
+}
+
+/* Icon inside the upload button */
+.icon {
+ width: 16px;
+ height: 16px;
+ margin-right: 5px;
+}
+
+/* Aligning the "Joindre le(s) fichier(s) à Commande client" text with the file upload button */
+.font-xs {
+ line-height: 1.5;
+}
+
+/* Dropdown styling */
+.dropdown {
+ display: inline-block;
+ position: relative;
+}
+
+.dropdown-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+ display: block;
+}
+
+.dropdown-item {
+ padding: 5px 10px;
+}
+
+/* Additional styling for specific icons in the dropdown menu */
+.dropdown-item .icon {
+ width: 20px;
+ height: 20px;
+ margin-right: 5px;
+}
+
+/* Styling for the text in the dropdown menu */
+.cloud-upload-section {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 5px;
+ cursor: pointer;
+}
+
+/* Tooltip on hover for the "cloud upload" option */
+.cloud-upload-section:hover:after {
+ content: "Joindre depuis le cloud";
+ position: absolute;
+ bottom: 100%;
+ left: 50%;
+ transform: translateX(-50%);
+ padding: 5px;
+ background-color: #333;
+ color: #fff;
+ border-radius: 5px;
+ font-size: 12px;
+ white-space: nowrap;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 767px) {
+ .coll {
+   margin-bottom: 20px;
+ }
+}
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                </div>
+                <div class="sidebar-brand-text mx-3">ARMA</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span></a>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa fa-edit"></i>
+                    <span>Inventaire</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="article.html">Articles</a>
+                        <a class="collapse-item" href="groupe-article.html">Groupes d'articles</a>
+                        <a class="collapse-item" href="ajustement.html">Ajustements de stock</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Ventes</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="Vente-clients.html">Clients</a>
+                        <a class="collapse-item" href="vente-devis.html">Devis</a>
+                        <a class="collapse-item" href="vente-commande.html">Commandes client</a>
+                        <a class="collapse-item" href="vente-facture.html">Factures</a>
+                        <a class="collapse-item" href="vente-ticket.html">Tickets de vente</a>
+                        <a class="collapse-item" href="vente-paiement-recu.html">Paiements reçus</a>
+                        <a class="collapse-item" href="vente-retour-vente.html">Retours vente</a>
+                        <a class="collapse-item" href="vente-facture-avoir.html">Factures d'avoir</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Achats</span>
+                </a>
+                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="achat-fournisseur.html">Fournisseurs</a>
+                        <a class="collapse-item" href="achat-depense.html">Dépenses</a>
+                        <a class="collapse-item" href="achat-bon-cmd.html">Bons de commandes</a>
+                        
+                        <a class="collapse-item" href="achat-fact-fourniss.html">Factures fournisseurs</a>
+                        <a class="collapse-item" href="achat-paiement-effectue.html">Paiements effectués</a>
+                        <a class="collapse-item active" href="achat-avoir-fourniss.html">Avoirs fournisseurs</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="rapport.html">
+                 <i class="fas fa-book"></i>
+                    <span>Rapports</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div> 
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Utilisateurs</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Paramètres
+                                </a>
+                                
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Déconnexion
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                 <h1 class="h3 mb-2 text-gray-800">  Nouveaux avoirs fournisseur
+                 </h1>
+                 <br>
+                 <hr><br>
+ <!--******************************************************************************************************-->
+ 
+ <div class="form-group" style="position: relative;">
+  <div class="row">
+    <label class="col-form-label col-lg-2">
+      <span class="pr-1">Nom du fournisseur</span>
+    </label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input type="text" class="form-control" id="nomInput" placeholder="Sélectionner un fournisseur...">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" id="searchButton">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <ul class="list-group suggestions mt-2" id="nomsListe">
+        <li class="list-group-item">Marc</li>
+        <li class="list-group-item">Martin</li>
+        <li class="list-group-item">Marie</li>
+        <li class="list-group-item">amira</li>
+      </ul>
+    </div>
+  </div>
+</div><br><br>
+<!--*****************************************************************************************-->
+
+<div class="form-group">
+ <div class="row">
+  <label class="col-form-label col-lg-2">N° de la facture d’avoir
+  </label> 
+  <div class="col-4">
+   <input  id="ember433" class="ember-text-field ember-view form-control" type="text">
+  </div>
+     <!---->
+  </div>
+</div>
+<!--******************************************************************************************-->     <div class="form-group">
+       <div class="row">
+          <label class="col-form-label col-lg-2">N° de commande</label> 
+            <div class="col-4">
+             <input  id="ember433" class="ember-text-field ember-view form-control" type="text">
+                </div>
+                        <!---->
+                 </div>
+                 </div>
+<!--*******************************************************************************************-->
+<div class="form-group">
+ <div class="row">
+  <label class="col-form-label col-lg-2">Date de l’avoir fournisseur
+  </label> 
+  <div class="col-4">
+   <input  id="ember433" class="ember-text-field ember-view form-control" type="text">
+  </div>
+     <!---->
+  </div>
+</div>
+<br> <hr><br>
+<!--*******************************************************************************************-->
+
+        
+       
+<!--*******************************************************************************************-->
+<div class="tab-pane active">
+ <div class="line-item-section fill-container">
+     <div class="zb-txn-form">
+         <table class="line-item-table">
+             <thead class="line-item-header">
+                 <th class="line-item-column over-flow" width="20%" style="min-width: 40px;">
+                     Détails de l'article
+                 </th> 
+                 <th class="line-item-column over-flow" width="7%">
+                 Compte
+              </th> 
+                 <th class="line-item-column over-flow" width="7%">
+                     Quantité
+                 </th> 
+                 <th class="line-item-column over-flow " width="7%">
+                     Taux
+                     
+                 </th> 
+                 <label>
+                 <th class="line-item-column over-flow " width="7%" >
+                    Taxe 
+                 </th> 
+                 <th class="line-item-column over-flow" width="7%">
+                     Montant
+                 </th> 
+                 
+             </thead> 
+             <tbody class="line-item-body">
+                 <tr class="line-item new-line-item">
+                     
+                      <td class="line-item-column">
+                         <input  id="ember722" class="ember-text-field ember-view form-control" type="text">
+                     </td> 
+                     <td class="line-item-column">
+                      <input  id="ember722" class="ember-text-field ember-view form-control" type="text">
+                  </td> 
+                     <td class="line-item-column">
+                         <input id="ember679" class="ember-text-field ember-view form-control" type="text">
+                     </td> 
+                     <td class="line-item-column">
+                         <input id="ember680" class="ember-text-field ember-view form-control" type="text">
+                     </td> 
+                     <td class="line-item-column">
+                         <input id="ember681" class="ember-text-field ember-view form-control" type="text">
+                     </td> 
+                     <td class="line-item-column">
+                         <input id="ember682" class="ember-text-field ember-view form-control" type="text">
+                     </td>
+                   
+                    </tr>
+                 </tbody>
+             </table>
+         </div>  
+         <div class="row mt-5">
+             <div class="col-lg-12">
+                 <a href="#" data-ember-action="" data-ember-action-685="685">+ Ajouter une autre ligne
+
+                 </a>
+             </div>
+         </div> 
+     </div>
+ </div>
+   <!--****************************************************************************************-->
+   <div id="box123"  class="row">
+    
+     <div class="total-section ml-auto invoice-discount col-lg-6 mt-5 rounded-xlg mr-4 grey-bg" id="total-section">
+      <div id="ember1590" class="ember-view">
+       <div id="ember1591" class="ember-view">
+        <div id="ember1592" class="ember-view collapse show">
+         <div class="total-row sub-total  mt-3">
+          <div class="total-label">Sous-total <br>
+          </div> 
+          <!--<div class="total-amount">0.000</div>-->
+         </div> 
+         <div class="total-row">
+          <div class="total-label">
+           <div class="row">
+            <div class="col-lg-5 col-sm-5 col-5">
+             <div class="form-control-plaintext">Remise
+ 
+             </div>
+            </div> 
+            <div class="col-lg-5 col-sm-5 col-5">
+             <div id="ember1593" class="input-group ember-view">
+              <input disabled="" id="ember1594" class="ember-text-field text-right ember-view form-control text-right" type="text"> 
+              <div class="input-group-append pt-2 pr-2 border-left border-dark discount-symbol"> &nbsp; %</div>
+             </div>
+            </div>
+           </div>
+          </div>
+           <!--<div class="total-amount" style="line-height: 2;"><span>0.000</span></div>-->
+          </div>
+          <br>
+          <div id="ember1595" class="ember-view">
+           <div class="table-row"><div class="total-row">
+            <div class="total-label">
+             <div class="row"><div class="col-lg-5 col-sm-5 col-5">
+              <div class="form-control-plaintext">Frais d’expédition
+               <div id="ember1596" class="popover-container ember-view">
+                <div class="font-xxs row align-center">
+                 <span id="ember1597" class="pt-2 ember-view">
+                  <span class="font-xxs btn-link cursor-pointer">Appliquer la taxe sur les frais d’expédition
+ 
+                  </span>
+                 </span>
+                </div> 
+                <div id="ember1598" style="width: 350px;" class="d-none popover bs-popover-bottom ember-view shipping-tax-popover">
+                </div>
+               
+               </div>
+              </div>
+             </div> 
+             <div class="col-lg-5 col-sm-5 col-5">
+              <input id="ember1599" class="ember-text-field text-right ember-view form-control" type="text"> <!----></div> 
+             </div>
+            </div>
+             <!--<div class="total-amount" style="line-height: 2">0.000</div>-->
+            </div> <!---->
+           </div>
+          </div> <!----><!----> <!----> <!---->  <!----> <!----> 
+          <div id="ember1601" class="ember-view"><!---->
+          </div>
+           <div class="table-row">
+            <div class="total-row">
+             <div class="badge-editable total-label">
+              <div class="row">
+               <div class="col-lg-5 col-sm-5 col-5">
+                <input id="ember1602" class="ember-text-field ember-view form-control editable" type="text">
+               </div>
+                <div class="col-lg-5 col-sm-5 col-5">
+                 <input id="ember1603" class="ember-text-field text-right ember-view form-control" type="text"></div> 
+                </div>
+               </div> 
+               <!--<div class="total-amount " style="line-height: 2">0.000</div>-->
+              </div>
+             </div>
+             </div>
+             <br>
+              <div class="total-row gross-total mb-3  ">
+              <div class="total-label">Total ( TND ) </div> 
+              <!--<div class="total-amount ">0.000</div>-->
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <br><br>
+         <div class="fill-container txn-bottom-form grey-bg mt-7">
+          <div class="zb-txn-form">
+              <div class="row clearfix seperator-col">
+                  <div class="col-lg-6 coll">
+                      <div class="form-group">
+                      <div class="mb-2">Remarques</div>
+                      <div>
+                          <textarea rows="3" id="ember1646" class="ember-text-area ember-view form-control"></textarea>
+                         
+                      </div>
+                  </div>
+              </div> 
+              <div class="col-lg-6 coll">
+                  <p class="form-control-plaintext">
+                      <div class="font-xs">Joindre le(s) fichier(s) à Commande client</div>
+                      <div>
+                          <div class="file-upload-container btn-upload-container ">
+                              <button class="btn file-upload upload-btn-sm" type="button">
+                                  <input multiple="" accept="image/gif,image/jpeg,image/png,image/bmp,application/pdf,application/doc, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/xml, text/csv, .xml, text/xml" id="ember1647" class="upload ember-view" type="file">
+                                  <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.99 397.93" class="icon align-text-top action-icons mr-2">
+                                      <g id="Layer_1-2">
+                                          <path d="M140.12 122.46c-9.21-9.21-9.21-24.14 0-33.35l82.2-82.2c9.21-9.21 24.14-9.21 33.35 0l82.2 82.2c9.21 9.21 9.21 24.14 0 33.35-4.6 4.6-10.64 6.9-16.67 6.9s-12.07-2.3-16.67-6.9l-41.96-41.97v168.87c0 13.02-10.55 23.58-23.57 23.58s-23.58-10.56-23.58-23.58V80.5l-41.96 41.96c-9.2 9.2-24.13 9.2-33.34 0z"></path>
+                                          <path d="M477.99 215.72v91.27c0 50.14-37.77 90.94-84.2 90.94H84.2c-46.43 0-84.2-40.8-84.2-90.94v-90.18c0-13.02 10.56-23.57 23.58-23.57s23.58 10.55 23.58 23.57v90.18c0 24.14 16.62 43.79 37.04 43.79h309.59c20.43 0 37.04-19.65 37.04-43.79v-91.27c0-13.02 10.56-23.58 23.58-23.58s23.58 10.56 23.58 23.58z"></path>
+                                      </g>
+                                  </svg> Charger le fichier
+                              </button>                  
+              </span>
+          </div>
+          <div class="mt-1">
+              <div>
+                  <small class="text-muted">Vous pouvez télécharger au maximum 10fichiers, de 5 Mo chacun</small>
+              </div>
+          </div>
+         </div>
+         </p>
+         </div>
+         </div>
+         </div>
+         </div> 
+         <!--*****************************************************************************************-->
+         <div class="btn-toolbar fixed-actions fill-container">
+          <button id="ember378" class="btn btn-secondary ember-view" type="button"><!----> 
+           Enregister comme brouillon
+         </button>
+              <button id="ember377" class="btn btn-primary ember-view" type="submit"><!----> 
+                  Enregistrer comme ouvert
+              </button> <!----> 
+              
+              <button id="ember378" class="btn btn-secondary ember-view" type="button"><!----> 
+                        Annuler
+              </button>
+          </div>
+         <br>
+         <br>  
+         
+                     </div>
+      <br>
+      <br>
+
+
+
+
+
+
+</div>
+               
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <!--<footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer> -->
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <!--<a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a> -->
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">prêt à partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à mettre fin à votre session en cours.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" href="login.html">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script>
+     
+  $(document).ready(function() {
+    // Récupérer les éléments nécessaires
+    const $nomInput = $('#nomInput');
+    const $nomsListe = $('#nomsListe');
+    const $searchButton = $('#searchButton');
+
+    // Afficher les suggestions lorsque l'utilisateur saisit une lettre
+    $nomInput.on('input', function() {
+      const searchTerm = $nomInput.val().toLowerCase();
+      $nomsListe.find('li').each(function() {
+        const $li = $(this);
+        const nom = $li.text().toLowerCase();
+        if (nom.startsWith(searchTerm)) {
+          $li.show();
+        } else {
+          $li.hide();
+        }
+      });
+
+      // Afficher ou masquer la liste de suggestions
+      if (searchTerm.length > 0) {
+        $nomsListe.addClass('show');
+      } else {
+        $nomsListe.removeClass('show');
+      }
+    });
+
+    // Remplir le champ avec le nom sélectionné lorsqu'on clique sur une suggestion
+    $nomsListe.on('click', 'li', function() {
+      $nomInput.val($(this).text());
+      $nomsListe.removeClass('show');
+    });
+
+    // Afficher ou masquer la liste de suggestions lorsque le bouton de recherche est cliqué
+    $searchButton.on('click', function() {
+      $nomsListe.toggleClass('show');
+    });
+  });
+    </script>
+
+</body>
+
+</html>

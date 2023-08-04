@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Achats | Fournisseurs</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="icone.css">
+    <style>
+        /* Ajuster la largeur de la colonne pour les images */
+        .line-item-table .line-item-column.item-img {
+          width: 0px;
+        }
+        
+        
+        
+        /* Ajuster l'espacement des cellules du tableau */
+        .line-item-table th,
+        .line-item-table td {
+          padding: 8px;
+        
+        }
+        
+        /* Ajouter une couleur de fond à l'en-tête du tableau */
+        .line-item-table thead {
+          background-color: #f1f1f1;
+        }
+        
+        /* Ajouter une bordure aux cellules du tableau */
+        .line-item-table th,
+        .line-item-table td {
+          border: 1px solid #ddd;
+        }
+        
+        /* Masquer les styles de textarea par défaut */
+        .line-item-table textarea {
+          border: none;
+          resize: none;
+          background: none;
+          width: 100%;
+        }
+        
+        
+        /* Ajouter une marge au container pour séparer les cellules */
+        .line-item-container {
+          margin: 10px;
+        }
+        
+            </style>
+
+    
+    
+    
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                </div>
+                <div class="sidebar-brand-text mx-3">ARMA</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span></a>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa fa-edit"></i>
+                    <span>Inventaire</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="article.html">Articles</a>
+                        <a class="collapse-item" href="groupe-article.html">Groupes d'articles</a>
+                        <a class="collapse-item" href="ajustement.html">Ajustements de stock</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Ventes</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="Vente-clients.html">Clients</a>
+                        <a class="collapse-item" href="vente-commande.html">Commandes client</a>
+                        <a class="collapse-item" href="vente-colis.html">Colis</a>
+                        <a class="collapse-item" href="vente-facture.html">Factures</a>
+                        <a class="collapse-item" href="vente-ticket.html">Tickets de vente</a>
+                        <a class="collapse-item" href="vente-paiement-recu.html">Paiements reçus</a>
+                        <a class="collapse-item" href="vente-retour-vente.html">Retours vente</a>
+                        <a class="collapse-item" href="vente-facture-avoir.html">Factures d'avoir</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Achats</span>
+                </a>
+                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item active" href="achat-fournisseur.html">Fournisseurs</a>
+                        <a class="collapse-item" href="achat-depense.html">Dépenses</a>
+                        <a class="collapse-item" href="achat-bon-cmd.html">Bons de commandes</a>
+                        <a class="collapse-item" href="achat-fact-fourniss.html">Factures fournisseurs</a>
+                        <a class="collapse-item" href="achat-paiement-effectue.html">Paiements effectués</a>
+                        <a class="collapse-item" href="achat-avoir-fourniss.html">Avoirs fournisseurs</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="rapport.html">
+                 <i class="fas fa-book"></i>
+                    <span>Rapports</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div> 
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Utilisateurs</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Paramètres
+                                </a>
+                                
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Déconnexion
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                 <h1 class="h3 mb-2 text-gray-800">Nouveau fournisseur
+                 </h1>
+                 <br>
+<hr>
+<br>
+<!--*******************************************************************************************-->
+<!--contact : titre, nom , prenom-->
+<div class="form-group">
+ <div class="row">
+  <label class="col-form-label col-lg-2">
+   <span class="pr-1">Contact principal</span>
+  </label> 
+  <div class="inline-fields col-lg-8">
+   <div class="row">
+    <div class="col-lg-3">
+     <div id="ember1085" class="type-ahead ember-view">
+      <div id="ember1086" class="dropdown show ac-dropdown ember-view">
+       <div class="auto-select ac-selected" tabindex="-1">
+        <div class="input-with-icon">
+         <input autocomplete="off" spellcheck="false" placeholder="Titre" autocorrect="off" autocapitalize="off" id="ember1087" class="ember-text-field form-control ac-search-txt ember-view" type="text">
+         <span class="icon" id="arrow-icon" onclick="toggleOptions()">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="gray">
+             <path d="M7 10l5 5 5-5z" />
+           </svg>
+         </span>
+         <div class="dropdown-menu dropdown-menu-right" id="custom-dropdown">
+          <a class="dropdown-item" href="#" onclick="selectOption('Mr')">Mr.</a>
+          <a class="dropdown-item" href="#" onclick="selectOption('Mme')">Mme.</a>
+          <a class="dropdown-item" href="#" onclick="selectOption('Mlle')">Mlle.</a>
+          <a class="dropdown-item" href="#" onclick="selectOption('Dr')">Dr.</a>
+        </div>
+       </div>
+       </div>
+      </div>
+      </div>
+     </div>
+     <div class="col-lg-3">
+      <input placeholder="Prénom"  id="ember1088" class="ember-text-field ember-view form-control" type="text">
+     </div>
+     <div class="col-lg-3">
+      <input placeholder="Nom de famille" id="ember1089" class="ember-text-field ember-view form-control" type="text"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+<!--*******************************************************************************************-->
+<!--**nom de la societe-->
+<div class="form-group">
+ <div class="row">
+  <label class="col-form-label col-lg-2">Nom de la société</label>
+   <div class="col-lg-4">
+    <input id="ember1090" class="ember-text-field ember-view form-control" type="text"></div>
+   </div>
+  </div>
+<!--******************************************************************************************-->
+<div class="form-group">
+ <div class="row">
+  <label class="col-form-label col-lg-2">
+   <span class="pr-1 ">Adresse e-mail du fournisseur</span> 
+  </label>
+  <div class="col-lg-4">
+   <input id="ember1094" class="ember-text-field ember-view form-control" type="text"></div></div>
+  </div>
+<!--******************************************************************************************-->
+<div class="form-group">
+ <div class="row">
+  <label class="col-form-label col-lg-2">
+   <span class="pr-1">Téléphone du fournisseur</span> 
+  </label> 
+  <div class="col-lg-2 pr-3">
+   <input placeholder="Téléphone professionnel" id="ember1319" class="ember-text-field ember-view form-control" type="text">
+  </div>
+  <div class="pl-3 col-lg-2">
+   <input placeholder="Téléphone portable" id="ember1320" class="ember-text-field ember-view form-control" type="text">
+  </div>
+ </div>
+</div>
+<br>
+<!--******************************************************************************************-->
+<!--******************************************************************************************************-->
+                      <!--autres details-->
+                      <div class="zb-txn-form">
+                       <ul class="nav nav-tabs nav-tabs-dashed" role="tablist">
+                          <li class="nav-item" data-ember-action="" data-ember-action-435="435">
+                             <span role="tab" class="nav-link active cursor-pointer">
+                                Autres détails
+                                
+                             </span>
+                             
+                           </li> 
+                           
+                       </ul>
+                     </div>               
+
+<br>
+<br>                      
+<div class="tab-content"> 
+  <div class="tab-pane active">
+     <div class="zb-txn-form">
+        <div class="row">
+           <div class="col-lg-8">
+               
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Devise</label> 
+                      <div class="col-lg-6">
+                          <select id="grade" class="form-control">
+                              <option value="">TND-Tunisian Dinar</option>
+              
+                              <option value="1">AED-UAE Dirham</option> 
+              
+                              <option value="2">AUD-Australian Dollar</option>
+              
+                              <option value="3">CAD-Canadian Dollar</option>
+              
+                              <option value="4">CNY-Yuan Renminbi</option>
+              
+                              <option value="5">EUR-Euro</option>
+              
+                              <option value="6">GBP-Pound Sterling</option>
+              
+                              <option value="7">INR-Indian Rupee</option>
+              
+                              <option value="8">JPY-Japanese Yen</option>
+              
+                              <option value="9">SAR-Saudi Riyal</option>
+              
+                              <option value="10">USD-United States Dollar</option>
+              
+                              <option value="11">ZAR-South African Rand</option>
+                            </select>
+                      </div>
+                  </div>
+              </div>
+
+
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Taux de taxe</label> 
+                      <div class="col-lg-6">
+                          <select id="grade" class="form-control">
+                              <option value=""></option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Conditions de paiement</label> 
+                      <div class="col-lg-6">
+                          <select id="grade" class="form-control">
+                              <option value="">Payable à réception</option>
+                              <option value="1">15 net</option>
+                              <option value="2">30 net</option>
+                              <option value="3">45 net</option>
+                              <option value="4">60 net</option>
+                              <option value="5">exigible à la fin du mois</option>
+                              <option value="6">exigible à la fin du mois prochain</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Site Internet</label>
+                       <div class="col-lg-6">
+                          <input id="ember696" class="ember-text-field ember-view form-control" type="text" placeholder="www.exemple.com">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Département</label> 
+                      <div class="col-lg-6">
+                          <input id="ember697" class="ember-text-field ember-view form-control" type="text">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Désignation</label> 
+                      <div class="col-lg-6">
+                          <input id="ember698" class="ember-text-field ember-view form-control" type="text">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Twitter</label> 
+                      <div class="col-lg-6">
+                          <div class="input-group">
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <div class="twitter social-networks">
+                                          <i class="fab fa-twitter"></i>
+                                      </div>
+                                  </span>
+                              </div>
+                               <input id="ember699" class="ember-text-field ember-view form-control" type="text">
+                              </div>  
+                              <span class="text-muted font-xs">http://www.twitter.com/
+                                  <strong></strong>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Identifiant/numéro Skype</label> <div class="col-lg-6">
+                          <div class="input-group">
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <div class="skype social-networks"><i class="fab fa-skype"></i></div>
+                                  </span>
+                              </div> 
+                              <input id="ember700" class="ember-text-field ember-view form-control" type="text">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="row">
+                      <label class="col-form-label col-lg-3">Facebook</label> 
+                      <div class="col-lg-6">
+                          <div class="input-group">
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <div class="facebook social-networks"><i class="fab fa-facebook"></i>
+                                      </div>
+                                  </span>
+                              </div> 
+                              <input id="ember701" class="ember-text-field ember-view form-control" type="text">
+                          </div>  
+                          <span class="text-muted font-xs">http://www.facebook.com/
+                              <strong></strong>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+       </div> 
+    </div>
+ </div>  
+ <br>
+ <br>
+ 
+
+ <div class="zb-txn-form">
+  <ul class="nav nav-tabs nav-tabs-dashed" role="tablist">
+     <li class="nav-item" data-ember-action="" data-ember-action-435="435">
+        <span role="tab" class="nav-link active cursor-pointer">
+           Adresse
+           
+        </span>
+        
+      </li> 
+</ul>
+</div>
+<br>
+<br>
+
+<div class="tab-pane active">
+  <div class="zb-txn-form">
+      <div class="row">
+          <div class="col-lg-6">
+              <div class="row">
+                  <label class="col-form-label add-header col-lg-12">Adresse de facturation</label>
+              </div>
+              <br>
+              <br>
+
+              <fieldset class="form-group">
+                  <div class="row ">
+                      <legend class="col-lg-4 col-form-label ">À l’attention de</legend> 
+                      <div class="col-lg-7 ">
+                              <input id="ember648" class="form-control ember-text-field ember-view" type="text">
+
+                      </div>
+                  </div>
+              </fieldset> 
+              <fieldset class="form-group">
+                  <div class="row ">
+                      <legend class="col-lg-4 col-form-label ">Pays / Région</legend> 
+                      <div class="col-lg-7 ">
+
+                          <div id="ember663" class="type-ahead ember-view">
+                              <div id="ember664" class="dropdown show ac-dropdown ember-view">
+                                  <div class="auto-select ac-selected" tabindex="-1">
+                                      <input autocomplete="off" spellcheck="false" placeholder="Sélectionnez ou tapez pour ajouter" autocorrect="off" autocapitalize="off" id="ember665"
+                                      class="ember-text-field form-control ac-search-txt ember-view" type="text"> 
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+              </fieldset>
+              <fieldset class="form-group">
+                  <div class="row ">
+                      <legend class="col-lg-4 col-form-label ">Adresse</legend>
+                       <div class="col-lg-7 ">
+  
+                          <textarea placeholder="Rue 1" id="ember652" class="form-control ember-text-area ember-view"></textarea>
+
+                      </div>
+                  </div>
+              </fieldset> 
+              <fieldset class="form-group">
+                  <div class="row ">
+                      <div class="col-lg-7 offset-lg-4">
+  
+                          <textarea placeholder="Rue 2" id="ember653" class="form-control ember-text-area ember-view"></textarea>
+
+                      </div>
+                  </div>
+              </fieldset>
+              <fieldset class="form-group">
+                  <div class="row ">
+                      <legend class="col-lg-4 col-form-label ">Ville</legend>
+                      <div class="col-lg-7 ">
+  
+                          <input id="ember654" class="form-control ember-text-field ember-view" type="text">
+
+                      </div>
+                  </div>
+              </fieldset> 
+              <fieldset class="form-group">
+                  <div class="row ">
+                      <legend class="col-lg-4 col-form-label ">État</legend> 
+                      <div class="col-lg-7 ">
+  
+                          <div id="ember655" class="type-ahead ember-view">
+                              <div id="ember656" class="dropdown show ac-dropdown ember-view">
+                                  
+                                  <div class="auto-select ac-selected" tabindex="-1">
+                                      <input autocomplete="off" spellcheck="false" placeholder="Sélectionnez ou tapez pour ajouter" autocorrect="off" autocapitalize="off" id="ember657" class="ember-text-field form-control ac-search-txt ember-view" type="text"> 
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+              </fieldset> 
+              <fieldset class="form-group">
+                  <div class="row ">
+                      <legend class="col-lg-4 col-form-label ">Code postal</legend> 
+                      <div class="col-lg-7 ">
+  
+                          <input id="ember658" class="form-control ember-text-field ember-view" type="text">
+
+                      </div>
+                      </div>
+                  </fieldset> 
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">Téléphone</legend> 
+                          <div class="col-lg-7 ">
+  
+                              <input id="ember659" class="form-control ember-text-field ember-view" type="text">
+
+                          </div>
+                      </div>
+                  </fieldset>
+                   <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">Fax</legend> 
+                          <div class="col-lg-7 ">
+  
+                              <input id="ember660" class="form-control ember-text-field ember-view" type="text">
+
+                          </div>
+                      </div>
+                  </fieldset>
+              </div> 
+              <div class="col-lg-6">
+                  <div class="row">
+                      <label class="col-form-label add-header col-lg-6">Adresse de livraison</label>
+                  </div>
+                  <br>
+                  <br>
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">À l’attention de</legend> <div class="col-lg-7 ">
+  
+                              <input id="ember662" class="form-control ember-text-field ember-view" type="text">
+
+                          </div>
+                      </div>
+                  </fieldset> 
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">Pays / Région</legend> 
+                          <div class="col-lg-7 ">
+  
+                              <div id="ember663" class="type-ahead ember-view">
+                                  <div id="ember664" class="dropdown show ac-dropdown ember-view">
+                                      <div class="auto-select ac-selected" tabindex="-1">
+                                          <input autocomplete="off" spellcheck="false" placeholder="Sélectionnez ou tapez pour ajouter" autocorrect="off" autocapitalize="off" id="ember665" class="ember-text-field form-control ac-search-txt ember-view" type="text"> 
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                  </fieldset> 
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">Adresse</legend> 
+                          <div class="col-lg-7 ">
+  
+                              <textarea placeholder="Rue 1" id="ember666" class="form-control ember-text-area ember-view"></textarea>
+
+                          </div> <!---->
+                      </div>
+                  </fieldset>
+                   <fieldset class="form-group">
+                      <div class="row "><!----> 
+                          <div class="col-lg-7 offset-lg-4">
+  
+                              <textarea placeholder="Rue 2" id="ember667" class="form-control ember-text-area ember-view"></textarea>
+
+                          </div>
+                      </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">Ville</legend> 
+                          <div class="col-lg-7 ">
+  
+                              <input id="ember668" class="form-control ember-text-field ember-view" type="text">
+
+                          </div>
+                      </div>
+                  </fieldset> 
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">État</legend> 
+                          <div class="col-lg-7 ">
+ 
+                              <div id="ember669" class="type-ahead ember-view">
+                                  <div id="ember670" class="dropdown show ac-dropdown ember-view">
+                                      <div class="auto-select ac-selected" tabindex="-1">
+                                          <input autocomplete="off" spellcheck="false" placeholder="Sélectionnez ou tapez pour ajouter" autocorrect="off" autocapitalize="off" id="ember671" class="ember-text-field form-control ac-search-txt ember-view" type="text">
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                  </fieldset> 
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">Code postal</legend> 
+                          <div class="col-lg-7 ">
+  
+                              <input id="ember672" class="form-control ember-text-field ember-view" type="text">
+
+                          </div>
+                      </div>
+                  </fieldset> 
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">Téléphone</legend> 
+                          <div class="col-lg-7 ">
+ 
+                              <input id="ember673" class="form-control ember-text-field ember-view" type="text">
+
+                          </div>
+                      </div>
+                  </fieldset> 
+                  <fieldset class="form-group">
+                      <div class="row ">
+                          <legend class="col-lg-4 col-form-label ">Fax</legend> 
+                          <div class="col-lg-7 ">
+  
+                              <input id="ember674" class="form-control ember-text-field ember-view" type="text">
+
+                          </div>
+                      </div>
+                  </fieldset>
+              </div>
+          </div> 
+      </div>
+  </div>
+
+
+<br>
+<br>
+<div class="zb-txn-form">
+  <ul class="nav nav-tabs nav-tabs-dashed" role="tablist">
+     <li class="nav-item" data-ember-action="" data-ember-action-435="435">
+        <span role="tab" class="nav-link active cursor-pointer">
+           Personne à contacter 
+        </span>
+      </li> 
+      </ul>
+      </div>
+      <br>
+      <br>
+
+
+      <div class="tab-pane active">
+          <div class="line-item-section fill-container">
+              <div class="zb-txn-form">
+                  <table class="line-item-table">
+                      <thead class="line-item-header">
+                          <th class="line-item-column over-flow" width="2%" style="min-width: 35px;">
+                              Titre
+                          </th> 
+                          <th class="line-item-column over-flow" width="3%">
+                              Prénom
+                          </th> 
+                          <th class="line-item-column over-flow " width="3%">
+                              Nom de famille
+                          </th> 
+                          <th class="line-item-column over-flow " width="8%" style="min-width: 200px;">
+                              Adresse e-mail
+                          </th> 
+                          <th class="line-item-column over-flow" width="3%">
+                              Téléphone professionnel
+                          </th> 
+                          <th class="line-item-column over-flow" width="3%">
+                              Téléphone portable
+                          </th> 
+                          <th width="1%" style="min-width: 20px;">
+                          </th>
+                      </thead> 
+                      <tbody class="line-item-body">
+                          <tr class="line-item new-line-item">
+                              
+                               <td class="line-item-column">
+                                  <input id="ember722" class="ember-text-field ember-view form-control" type="text">
+                              </td> 
+                              <td class="line-item-column">
+                                  <input id="ember679" class="ember-text-field ember-view form-control" type="text">
+                              </td> 
+                              <td class="line-item-column">
+                                  <input id="ember680" class="ember-text-field ember-view form-control" type="text">
+                              </td> 
+                              <td class="line-item-column">
+                                  <input id="ember681" class="ember-text-field ember-view form-control" type="text">
+                              </td> 
+                              <td class="line-item-column">
+                                  <input id="ember682" class="ember-text-field ember-view form-control" type="text">
+                              </td>
+                              <td class="line-item-column">
+                                  <input id="ember682" class="ember-text-field ember-view form-control" type="text">
+                              </td>
+                             </tr>
+                          </tbody>
+                      </table>
+                  </div>  
+                  <div class="row mt-5">
+                      <div class="col-lg-12">
+                          <a href="#" data-ember-action="" data-ember-action-685="685">+ Ajouter une personne à contacter
+
+                          </a>
+                      </div>
+                  </div> 
+              </div>
+          </div>
+
+<br>
+<br>
+
+
+                       
+ <div class="btn-toolbar fixed-actions fill-container">
+      <button id="ember377" class="btn btn-primary ember-view" type="submit"> 
+          Enregistrer
+      </button>
+      
+      <button id="ember378" class="btn btn-secondary ember-view" type="button">
+                Annuler
+      </button>
+  </div>
+<br>
+<br>
+
+     </div>
+   </div>
+ </div>
+
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">prêt à partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à mettre fin à votre session en cours.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" href="login.html">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="fournisseur.js"></script>
+    <!-- Inclure le lien vers Bootstrap JS avant la balise </body> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

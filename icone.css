@@ -1,0 +1,22 @@
+.input-with-icon {
+ position: relative;
+}
+
+.input-with-icon input {
+ padding-right: 30px; /* Pour laisser de l'espace à droite pour l'icône */
+}
+
+.input-with-icon .icon {
+ position: absolute;
+ top: 50%;
+ right: 5px; /* Ajustez cette valeur pour déplacer l'icône horizontalement */
+ transform: translateY(-50%);
+ cursor: pointer;
+}
+
+/* Facultatif : pour ajuster la taille de l'icône */
+.input-with-icon .icon svg {
+ width: 30px; /* Ajustez cette valeur selon la taille de votre icône */
+ height: 20px; /* Ajustez cette valeur selon la taille de votre icône */
+}
+

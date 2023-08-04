@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ventes | Ajustements de stock</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                </div>
+                <div class="sidebar-brand-text mx-3">ARMA</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span></a>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa fa-edit"></i>
+                    <span>Inventaire</span>
+                </a>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="article.html">Articles</a>
+                        <a class="collapse-item" href="groupe-article.html">Groupes d'articles</a>
+                        <a class="collapse-item active" href="ajustement.html">Ajustements de stock</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Ventes</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="Vente-clients.html">Clients</a>
+                        <a class="collapse-item" href="vente-devis.html">Devis</a>
+                        <a class="collapse-item" href="vente-commande.html">Commandes client</a>
+                        <a class="collapse-item" href="vente-facture.html">Factures</a>
+                       
+                        <a class="collapse-item" href="vente-paiement-recu.html">Paiements reçus</a>
+                        <a class="collapse-item" href="vente-retour-vente.html">Retours vente</a>
+                        <a class="collapse-item" href="vente-facture-avoir.html">Factures d'avoir</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Achats</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="achat-fournisseur.html">Fournisseurs</a>
+                        <a class="collapse-item" href="achat-depense.html">Dépenses</a>
+                        <a class="collapse-item" href="achat-bon-cmd.html">Bons de commandes</a>
+                        
+                        <a class="collapse-item" href="achat-fact-fourniss.html">Factures fournisseurs</a>
+                        <a class="collapse-item" href="achat-paiement-effectue.html">Paiements effectués</a>
+                        <a class="collapse-item" href="achat-avoir-fourniss.html">Avoirs fournisseurs</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="rapport.html">
+                 <i class="fas fa-book"></i>
+                    <span>Rapports</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+ 
+
+                        <div class="topbar-divider d-none d-sm-block"></div> 
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Utilisateurs</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Paramètres
+                                </a>
+                                
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Déconnexion
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Ajustements de stock
+                        <a id="boutton-nv" href="ajouter-ajustement.html" class="btn btn-primary">+ Nouveau</a>
+                    </h1>
+                  
+                  
+                  <br>
+                  <hr>
+                  <br>
+<!--*******************************************************************************************-->
+
+<div class="scroll-y noscroll-x fill body scrollbox txn-small">
+    <div id="ember455" class="ember-view"></div>
+    <div class="fill-container">
+        <div class="action-header">Filtrer par : &nbsp;  
+            <span id="ember456" class="ember-view btn-group">
+                <div id="ember457" class="dropdown ember-view clearfix list-title">
+                    <a id="ember458" class="dropdown-toggle no-caret ember-view btn btn-light">
+                        <span class="text-muted ">Type: </span>
+                        <span class="filter-title over-flow " >Tout</span> 
+                    </a> 
+                    <div class="dropdown-menu   scrollmenu listview-filter p-0">
+                        <div id="ember459" class="scroll-content ember-view">
+                            <div id="ember460" class="ember-view">
+                                <div id="ember461" class="ember-view collapse show">
+                                    <button class="dropdown-item  " type="button" data-ember-action="" data-ember-action-462="462">Tout
+                                    </button>
+                                    <button class="dropdown-item" type="button" data-ember-action="" data-ember-action-463="463">Par quantité</button>
+                                    <button class="dropdown-item  " type="button" data-ember-action="" data-ember-action-464="464">
+                                         Par valeur
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </span>
+                <div id="ember466" class="ember-view btn-group">
+                    <div id="ember467" class="dropdown ember-view clearfix list-title">
+                        <a id="ember468" class="dropdown-toggle ember-view btn btn-light    no-caret">
+                            <span class="text-muted">Période :&nbsp; </span> Tout 
+                            </a> 
+                            <div class="dropdown-menu   scrollmenu listview-filter">
+                                <button class="dropdown-item" type="button" data-ember-action="" data-ember-action-469="469">Tout</button>
+                                <button class="dropdown-item" type="button" data-ember-action="" data-ember-action-470="470">Aujourd’hui</button><button class="dropdown-item" type="button" data-ember-action="" data-ember-action-471="471">Cette semaine</button><button class="dropdown-item" type="button" data-ember-action="" data-ember-action-472="472">Ce mois</button><button class="dropdown-item" type="button" data-ember-action="" data-ember-action-473="473">Ce trimestre</button><button class="dropdown-item" type="button" data-ember-action="" data-ember-action-474="474">Cette année</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <br>
+                <table class="table zi-table table-hover   ">
+                    <thead>
+                        <tr>
+                            <th class="text-left    bulk-selection-cell cursor-pointer" style="width: 42px;min-width: 42px;max-width: 42px;">
+                                <input id="ember478" class="ember-checkbox ember-view cursor-pointer align-middle" type="checkbox" aria-checked="true">
+                            </th>
+                            <th class="text-left sortable">
+                                 <div class="position-relative d-flex ">
+                                     <div class="over-flow" title="Date">Date</div>
+                                </div>
+                            </th>
+                            <th class="text-left sortable">
+                                <div class="position-relative d-flex ">
+                                    <div class="over-flow" title="Raison">Raison</div>
+                                </div>
+                            </th>
+                            <th class="text-left">
+                                <div class="position-relative d-flex ">
+                                    <div class="over-flow" title="Description">Description </div>
+                                </div>
+                            </th>
+                            <th class="text-left"> 
+                                <div class="position-relative d-flex ">
+                                    <div class="over-flow" title="Statut">Statut</div>
+                                </div>
+                            </th>
+                            <th class="text-left">
+                                <div class="position-relative d-flex ">
+                                    <div class="over-flow" title="Numéro de référence">Numéro de référence</div>
+                                </div>
+                            </th>
+                            <th class="text-left">
+                                <div class="position-relative d-flex ">
+                                     <div class="over-flow" title="Type">Type</div>
+                                    </div>
+                                </th>
+                                <th class="text-left">
+                                    <div class="position-relative d-flex ">
+                                        <div class="over-flow" title="Créé par">Créé par </div>
+                                    </div>
+                                </th>
+                                <th class="text-left sortable     desc"> 
+                                    <div class="position-relative d-flex "><!----> 
+                                        <div class="over-flow" title="Heure de création">Heure de création<!----> </div> 
+                                    </div>
+                                </th>
+                                <th class="text-left">
+                                    <div class="position-relative d-flex ">
+                                        <div class="over-flow" title="Dernière modification par">Dernière modification par</div>
+                                    </div>
+                                </th>
+                                <th class="text-left sortable">
+                                    <div class="position-relative d-flex ">
+                                         <div class="over-flow" title="Heure de la dernière modification">Heure de la dernière modification
+                                         </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="empty-list">
+                                <td class="text-center" colspan="11">
+                                    <h4 class="text-muted msg">Aucune donnée à afficher</h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div showtotalcount="" id="ember490" class="pagination-bar ember-view">
+                    <div class="pagination d-flex align-items-center flex-wrap d-print-none justify-content-between  ">
+                        
+                    </div>
+                </div>
+            </div>
+
+
+                    
+</div>
+            <!-- End of Main Content -->
+    </div>
+    
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">prêt à partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à mettre fin à votre session en cours.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" href="login.html">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script>
+        
+const checkbox1 = document.getElementById('af50b8c20');
+const checkbox2 = document.getElementById('a2eaf0155');
+
+const tableau1 = document.getElementById('tableau1');
+const tableau2 = document.getElementById('tableau2');
+
+checkbox1.addEventListener('change', function() {
+    if (checkbox1.checked) {
+        tableau1.style.display = 'block';
+        tableau2.style.display = 'none';
+    } else {
+        tableau1.style.display = 'none';
+    }
+});
+
+checkbox2.addEventListener('change', function() {
+    if (checkbox2.checked) {
+        tableau2.style.display = 'block';
+        tableau1.style.display = 'none';
+    } else {
+        tableau2.style.display = 'none';
+    }
+});
+
+    </script>
+    
+
+
+</body>
+
+</html>
